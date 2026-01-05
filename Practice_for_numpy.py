@@ -54,11 +54,31 @@ print("Full array (255):\n", arr_full)
 arr_eye= np.eye(5)
 print("Identity array with 5-Dim:\n", arr_eye)
 
-
+# Generate an array with numbers starting from "start" to "stop" with the interval "step"
+# Normal ascending array
 arr_range = np.arange(0, 10, 2)
 print("Arange (0 to 10, step 2):", arr_range)
+print("\n")
+
+# Normal descending array
 arr_range2 = np.arange(10, 0, -1)
 print("Arange (10 to 0, step -1):", arr_range2)
+print("\n")
+
+# Generate numbers from 10 to 1 with ascending step 1. This is rediculous and an empty ndarray will be generated.
+arr_range3 = np.arange(10, 2)
+print("Arange (10 to 2-1, step 2):", arr_range3)
+print("\n")
+
+# Generate from 10 to 14 with the default ascending step 1.
+arr_range4 = np.arange(10, 15)
+print("Arange (10 to 15-1, step 1):", arr_range4)
+print("\n")
+
+# Generate from 0 to 23 with the default ascending step 1.
+# FYI, the default starting number for np.arange() is 0
+arr_range5 = np.arange(24)
+print("Arange (0 to 24-1, step 1):", arr_range5)
 print("\n")
 
 arr_linspace = np.linspace(0, 1, 5)
