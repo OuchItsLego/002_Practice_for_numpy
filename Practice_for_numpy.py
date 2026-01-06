@@ -24,9 +24,9 @@ print(output)
 
 # ===== ESSENTIAL NUMPY FUNCTIONS FOR DATA SCIENCE =====
 
-# 1. ARRAY CREATION
-# All of array creation functions contained numpy library generates "ndarray" type variables
-# It is not the same as "array" type variable, which is the primitive type used in python
+### 1. ARRAY CREATION
+## All of array creation functions contained numpy library generates "ndarray" type variables
+## It is not the same as "array" type variable, which is the primitive type used in python
 
 print("\n=== ARRAY CREATION ===")
 # Generate an n by m matrix filled with zeros
@@ -43,16 +43,21 @@ print("\n")
 # Generate an n by m matrix filled with 1's
 arr_ones = np.ones((2, 4))
 print("Ones array:\n", arr_ones)
+print("\n")
 
 # Generate an n by m matrix filled with the specified number in the last argument
 arr_full = np.full((3, 3), 255)
 print("Full array (255):\n", arr_full)
+print("\n")
+
 arr_full = np.full(3, 196)
 print("Full array (255):\n", arr_full)
+print("\n")
 
 # Generate an n-dimensional identity matrix. n is the argument of the eye() function
 arr_eye= np.eye(5)
 print("Identity array with 5-Dim:\n", arr_eye)
+print("\n")
 
 # Generate an array with numbers starting from "start" to "stop" with the interval "step"
 # Normal ascending array
@@ -84,10 +89,67 @@ print("\n")
 arr_linspace = np.linspace(0, 1, 5)
 print("Linspace (0 to 1, 5 points):", arr_linspace)
 
-# # 2. ARRAY PROPERTIES
-# print("\n=== ARRAY PROPERTIES ===")
-# arr = np.array([[1, 2, 3], [4, 5, 6]])
-# print(f"Shape: {arr.shape}, Dtype: {arr.dtype}, Size: {arr.size}")
+### 2. ARRAY PROPERTIES
+print("\n=== ARRAY PROPERTIES ===")
+
+## Array Shape
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Array: {arr} \n")
+print(f"Shape: {arr.shape} \n")                     # returns (number of n-dim data, number of (n-1)-dim data, ... number of 1-dim data)
+print(f"Type of Shape: {type(arr.shape)} \n")       # the return type of ndarray.shape is tuple
+
+arr2 = np.array([[[1,7,3], [8,1,2]], [[1,7,3], [8,1,2]], [[1,7,3], [8,1,2]], [[1,7,3], [8,1,2]]])
+print(f"Array: {arr2} \n")
+print(f"Shape: {arr2.shape} \n")
+print(f"Length: {len(arr2)} \n")                    # the length of an ndarray is size of the outermost dimension
+
+# arr3 = np.array([[[1,7,3], [8,1,2]], [[1,7,3], [8,1]]]) # → Treated as an inhomogeneous shape, which leads to error
+# print(f"Shape: {arr3.shape} \n")
+
+arr4 = np.array([arr, arr])                         # Concatenating ndarrays is allowed.
+print(f"Array: {arr4} \n")
+print(f"Shape: {arr4.shape} \n")
+
+for i in range(0, 20):                              # PC stopped when I tried 100 loops...
+    arr = np.array([arr, arr])
+print(f"Shape: {arr.shape} \n")                     
+
+## Number of Dimension of an Array
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Array: {arr} \n")
+print(f"Number of Dimensions: {arr.ndim} \n")       # returns the number of dimension of the ndarray. It means the number of axes of the ndarray
+
+arr2 = np.array((1,2,3,4,5))
+print(f"Array: {arr2} \n")
+print(f"Number of Dimensions: {arr2.ndim} \n")       # returns the number of dimension of the ndarray. It means the number of axes of the ndarray
+
+## Size of an Array
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Array: {arr} \n")
+print(f"Size: {arr.size} \n")                       # returns the number of all elements contained in the ndarray -> returns 2*3 = 6
+
+for i in range(0, 20):                              # stack arr recursively
+    arr = np.array([arr, arr])
+print(f"Size: {arr.size} \n")                       # returns 2^20 * 2 * 3 = 6,291,456
+
+## Data Type of an Array
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Data Type: {arr.dtype} \n")                 # returns data type of the array, which is "int64"
+
+arr2 = np.array([[1., 2., 3.], [4., 5., 6.]])
+print(f"Data Type: {arr2.dtype} \n")                # returns data type of the array, which is "float64"
+
+arr3 = np.array([[1,8,4], [2,6,8], [7,2,3]], dtype='float') # dtype keyword can be used to designate the data type of an array when it is created
+print(f"Array: {arr3} \n")                          # All the elements of the arr3 array are converted to floating point numbers
+print(f"Data Type: {arr3.dtype} \n")                # the data type of arr3 is "float64" by default
+arr3 = np.array([[1,8,4], [2,6,8], [7,2,3]], dtype='float32')
+print(f"Data Type: {arr3.dtype} \n")                # the data type of arr3 has been casted to "float32"
+
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Number of Byte Chunks: {arr.itemsize} \n")
+
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Total Size in Bytes: {arr.nbytes} \n")
 
 # # 3. MATHEMATICAL OPERATIONS
 # print("\n=== MATHEMATICAL OPERATIONS ===")
