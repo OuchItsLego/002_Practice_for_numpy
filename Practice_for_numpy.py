@@ -157,13 +157,20 @@ print(f"Total Size in Bytes: {arr.nbytes} \n")      # returns total size of an n
 ### 3. MATHEMATICAL OPERATIONS
 print("\n=== MATHEMATICAL OPERATIONS ===")
 arr = np.array([[1,6,2], [8,2,3], [5,9,1]])
+arr3D = np.array([[[1,6,2], [8,2,3], [5,9,1]], [[7,1,2], [1,8,2], [4,9,6]], [[1,4,5], [9,6,7], [7,6,9]]])
 
 # Sum of an ndarray
 print("Sum:", np.sum(arr))
 print("\n")
 print("Sum along 0th axis:", np.sum(arr, 0))
 print("\n")
+print("Sum along 0th axis:", arr.sum(axis=0))       # sum function seems to be a member function of a ndarray class
+print("\n")
 print("Sum along 1st axis:", np.sum(arr, 1))
+print("\n")
+print("Sum along 1st axis:", arr.sum(axis=1))
+print("\n")
+print("Sum along 2nd axis:", arr.sum(axis=2))       # error. arr is 2-dim array and, therefore, accessing axis 2 is not allowed
 print("\n")
 print("\n")
 
