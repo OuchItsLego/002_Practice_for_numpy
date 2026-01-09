@@ -1,6 +1,5 @@
 import numpy as np
 import math 
-
 # Generate two random 5x5 matrices
 matrix_a = np.random.randint(1, 10, size=(5, 5))
 matrix_b = np.random.randint(1, 10, size=(5, 5))
@@ -70,7 +69,7 @@ arr_range2 = np.arange(10, 0, -1)
 print("Arange (10 to 0, step -1):", arr_range2)
 print("\n")
 
-# Generate numbers from 10 to 1 with ascending step 1. This is rediculous and an empty ndarray will be generated.
+# Generate numbers from 10 to 1 with ascending step 1. This is ridiculous and an empty ndarray will be generated.
 arr_range3 = np.arange(10, 2)
 print("Arange (10 to 2-1, step 2):", arr_range3)
 print("\n")
@@ -155,126 +154,126 @@ arr = np.array([[1, 2, 3], [4, 5, 6]])
 print(f"Total Size in Bytes: {arr.nbytes} \n")      # returns total size of an ndarray in byte
 
 """
-NumPy axis 파라미터 상세 가이드
+NumPy axis Parameter Detailed Guide
 
-axis 파라미터는 NumPy에서 다차원 배열의 특정 축(dimension)을 따라
-연산을 수행할 때 사용하는 매우 중요한 개념입니다.
+The axis parameter is a very important concept used in NumPy to perform
+operations along specific axes (dimensions) of multidimensional arrays.
 """
 
 import numpy as np
 
 print("=" * 70)
-print("1. axis 기본 개념 이해하기")
+print("1. Understanding axis basic concepts")
 print("=" * 70)
 
-# 1D 배열 (축이 1개)
+# 1D array (1 axis)
 arr_1d = np.array([1, 2, 3, 4, 5])
-print(f"\n1D 배열:\n{arr_1d}")
+print(f"\n1D array:\n{arr_1d}")
 print(f"shape: {arr_1d.shape}")
-print(f"axis 0: 배열의 유일한 축")
+print(f"axis 0: The only axis of the array")
 
-# 2D 배열 (축이 2개)
+# 2D array (2 axes)
 arr_2d = np.array([[1, 2, 3],
                    [4, 5, 6]])
-print(f"\n2D 배열:\n{arr_2d}")
+print(f"\n2D array:\n{arr_2d}")
 print(f"shape: {arr_2d.shape}")
-print(f"axis 0: 행(row) 방향 ↓")
-print(f"axis 1: 열(column) 방향 →")
+print(f"axis 0: Row direction ↓")
+print(f"axis 1: Column direction →")
 
-# 3D 배열 (축이 3개)
+# 3D array (3 axes)
 arr_3d = np.array([[[1, 2], [3, 4]],
                    [[5, 6], [7, 8]]])
-print(f"\n3D 배열:\n{arr_3d}")
+print(f"\n3D array:\n{arr_3d}")
 print(f"shape: {arr_3d.shape}")
-print(f"axis 0: 깊이(depth) 방향")
-print(f"axis 1: 행(row) 방향")
-print(f"axis 2: 열(column) 방향")
+print(f"axis 0: Depth direction")
+print(f"axis 1: Row direction")
+print(f"axis 2: Column direction")
 
 print("\n" + "=" * 70)
-print("2. 2D 배열에서 axis 파라미터 사용 예시")
+print("2. Using axis parameter in 2D arrays")
 print("=" * 70)
 
-# 샘플 2D 배열 생성
+# Create sample 2D array
 matrix = np.array([[1, 2, 3, 4],
                    [5, 6, 7, 8],
                    [9, 10, 11, 12]])
 
-print(f"\n원본 배열 (3행 4열):\n{matrix}")
+print(f"\nOriginal array (3 rows, 4 columns):\n{matrix}")
 print(f"shape: {matrix.shape}")
 
-# axis=None (기본값) - 전체 배열에 대해 연산
+# axis=None (default) - operation on entire array
 print(f"\nnp.sum(matrix) = {np.sum(matrix)}")
-print("→ 모든 원소의 합: 1+2+3+...+12 = 78")
+print("→ Sum of all elements: 1+2+3+...+12 = 78")
 
-# axis=0 - 각 열에 대해 연산 (행 방향으로 이동하며 계산)
+# axis=0 - operation on each column (move along row direction)
 print(f"\nnp.sum(matrix, axis=0) = {np.sum(matrix, axis=0)}")
-print("→ 각 열의 합을 계산")
-print("  첫 번째 열: 1+5+9 = 15")
-print("  두 번째 열: 2+6+10 = 18")
-print("  세 번째 열: 3+7+11 = 21")
-print("  네 번째 열: 4+8+12 = 24")
-print(f"  결과 shape: {np.sum(matrix, axis=0).shape}")
+print("→ Calculate sum of each column")
+print("  First column: 1+5+9 = 15")
+print("  Second column: 2+6+10 = 18")
+print("  Third column: 3+7+11 = 21")
+print("  Fourth column: 4+8+12 = 24")
+print(f"  Result shape: {np.sum(matrix, axis=0).shape}")
 
-# axis=1 - 각 행에 대해 연산 (열 방향으로 이동하며 계산)
+# axis=1 - operation on each row (move along column direction)
 print(f"\nnp.sum(matrix, axis=1) = {np.sum(matrix, axis=1)}")
-print("→ 각 행의 합을 계산")
-print("  첫 번째 행: 1+2+3+4 = 10")
-print("  두 번째 행: 5+6+7+8 = 26")
-print("  세 번째 행: 9+10+11+12 = 42")
-print(f"  결과 shape: {np.sum(matrix, axis=1).shape}")
+print("→ Calculate sum of each row")
+print("  First row: 1+2+3+4 = 10")
+print("  Second row: 5+6+7+8 = 26")
+print("  Third row: 9+10+11+12 = 42")
+print(f"  Result shape: {np.sum(matrix, axis=1).shape}")
 
 print("\n" + "=" * 70)
-print("3. axis를 이해하는 핵심 원리")
+print("3. Core principle for understanding axis")
 print("=" * 70)
 
-print("\n핵심 규칙: axis=n을 지정하면 해당 축이 '사라집니다'")
-print("\n원본 배열 shape: (3, 4)")
-print("axis=0 적용 후: (4,)  <- 첫 번째 차원(3)이 사라짐")
-print("axis=1 적용 후: (3,)  <- 두 번째 차원(4)이 사라짐")
+print("\nCore rule: When axis=n is specified, that axis 'disappears'")
+print("\nOriginal array shape: (3, 4)")
+print("After applying axis=0: (4,)  <- First dimension (3) disappears")
+print("After applying axis=1: (3,)  <- Second dimension (4) disappears")
 
-print("\n시각적 이해:")
-print("\naxis=0 (↓ 방향):")
+print("\nVisual understanding:")
+print("\naxis=0 (↓ direction):")
 print("[[1, 2, 3, 4],")
 print(" [5, 6, 7, 8],")
 print(" [9,10,11,12]]")
 print(" ↓  ↓  ↓  ↓")
 print("[15,18,21,24]")
 
-print("\naxis=1 (→ 방향):")
+print("\naxis=1 (→ direction):")
 print("[[1, 2, 3, 4] → [10]")
 print(" [5, 6, 7, 8] → [26]")
 print(" [9,10,11,12] → [42]")
 
 print("\n" + "=" * 70)
-print("4. 다양한 함수에서 axis 사용 예시")
+print("4. Using axis in various functions")
 print("=" * 70)
 
 data = np.array([[10, 20, 30],
                  [40, 50, 60],
                  [70, 80, 90]])
 
-print(f"\n데이터:\n{data}\n")
+print(f"\nData:\n{data}\n")
 
-# 평균 (mean)
-print(f"전체 평균: {np.mean(data)}")
-print(f"각 열의 평균 (axis=0): {np.mean(data, axis=0)}")
-print(f"각 행의 평균 (axis=1): {np.mean(data, axis=1)}")
+# Mean
+print(f"Overall mean: {np.mean(data)}")
+print(f"Mean of each column (axis=0): {np.mean(data, axis=0)}")
+print(f"Mean of each row (axis=1): {np.mean(data, axis=1)}")
 
-# 최댓값 (max)
-print(f"\n전체 최댓값: {np.max(data)}")
-print(f"각 열의 최댓값 (axis=0): {np.max(data, axis=0)}")
-print(f"각 행의 최댓값 (axis=1): {np.max(data, axis=1)}")
+# Max
+print(f"\nOverall maximum: {np.max(data)}")
+print(f"Maximum of each column (axis=0): {np.max(data, axis=0)}")
+print(f"Maximum of each row (axis=1): {np.max(data, axis=1)}")
 
-# 표준편차 (std)
-print(f"\n전체 표준편차: {np.std(data):.2f}")
-print(f"각 열의 표준편차 (axis=0): {np.std(data, axis=0)}")
-print(f"각 행의 표준편차 (axis=1): {np.std(data, axis=1)}")
+# Standard deviation
+print(f"\nOverall standard deviation: {np.std(data):.2f}")
+print(f"Standard deviation of each column (axis=0): {np.std(data, axis=0)}")
+print(f"Standard deviation of each row (axis=1): {np.std(data, axis=1)}")
 
 print("\n" + "=" * 70)
-print("5. 3D 배열에서 axis 사용")
+print("5. Using axis in 3D arrays")
 print("=" * 70)
 
-# 3D 배열: (2, 3, 4) - 2개 층, 각 층은 3행 4열
+# 3D array: (2, 3, 4) - 2 layers, each layer is 3 rows x 4 columns
 cube = np.array([[[1, 2, 3, 4],
                   [5, 6, 7, 8],
                   [9, 10, 11, 12]],
@@ -283,151 +282,154 @@ cube = np.array([[[1, 2, 3, 4],
                   [17, 18, 19, 20],
                   [21, 22, 23, 24]]])
 
-print(f"\n3D 배열 shape: {cube.shape}")
-print(f"첫 번째 층:\n{cube[0]}")
-print(f"\n두 번째 층:\n{cube[1]}")
+print(f"\n3D array shape: {cube.shape}")
+print(f"First layer:\n{cube[0]}")
+print(f"\nSecond layer:\n{cube[1]}")
 
 print(f"\nnp.sum(cube, axis=0).shape: {np.sum(cube, axis=0).shape}")
-print("→ 층을 따라 합산 (2개 층 → 하나로)")
-print(f"결과:\n{np.sum(cube, axis=0)}")
+print("→ Sum along layers (2 layers → one)")
+print(f"Result:\n{np.sum(cube, axis=0)}")
 
 print(f"\nnp.sum(cube, axis=1).shape: {np.sum(cube, axis=1).shape}")
-print("→ 각 층에서 행을 따라 합산 (3행 → 하나로)")
-print(f"결과:\n{np.sum(cube, axis=1)}")
+print("→ Sum along rows in each layer (3 rows → one)")
+print(f"Result:\n{np.sum(cube, axis=1)}")
 
 print(f"\nnp.sum(cube, axis=2).shape: {np.sum(cube, axis=2).shape}")
-print("→ 각 층, 각 행에서 열을 따라 합산 (4열 → 하나로)")
-print(f"결과:\n{np.sum(cube, axis=2)}")
+print("→ Sum along columns in each layer and row (4 columns → one)")
+print(f"Result:\n{np.sum(cube, axis=2)}")
 
 print("\n" + "=" * 70)
-print("6. 여러 축을 동시에 지정하기")
+print("6. Specifying multiple axes simultaneously")
 print("=" * 70)
 
 matrix = np.array([[1, 2, 3],
                    [4, 5, 6],
                    [7, 8, 9]])
 
-print(f"\n원본 배열:\n{matrix}")
+print(f"\nOriginal array:\n{matrix}")
 print(f"shape: {matrix.shape}")
 
-# 여러 축 동시 지정 (튜플로)
+# Specify multiple axes (as tuple)
 print(f"\nnp.sum(matrix, axis=(0, 1)): {np.sum(matrix, axis=(0, 1))}")
-print("→ 모든 축에 대해 합산 (axis=None과 동일)")
+print("→ Sum across all axes (same as axis=None)")
 
-# 3D 배열에서 여러 축 지정
+# Specify multiple axes in 3D array
 print(f"\nnp.sum(cube, axis=(0, 2)).shape: {np.sum(cube, axis=(0, 2)).shape}")
-print(f"결과: {np.sum(cube, axis=(0, 2))}")
-print("→ axis 0과 2가 사라지고 axis 1만 남음")
+print(f"Result: {np.sum(cube, axis=(0, 2))}")
+print("→ Axes 0 and 2 disappear, only axis 1 remains")
 
 print("\n" + "=" * 70)
-print("7. keepdims 파라미터와 함께 사용")
+print("7. Using keepdims parameter")
 print("=" * 70)
 
 arr = np.array([[1, 2, 3],
                 [4, 5, 6]])
 
-print(f"\n원본 배열:\n{arr}")
+print(f"\nOriginal array:\n{arr}")
 print(f"shape: {arr.shape}")
 
 result_normal = np.sum(arr, axis=1)
 print(f"\nnp.sum(arr, axis=1):")
-print(f"결과: {result_normal}")
+print(f"Result: {result_normal}")
 print(f"shape: {result_normal.shape}")
 
 result_keepdims = np.sum(arr, axis=1, keepdims=True)
 print(f"\nnp.sum(arr, axis=1, keepdims=True):")
-print(f"결과:\n{result_keepdims}")
+print(f"Result:\n{result_keepdims}")
 print(f"shape: {result_keepdims.shape}")
-print("→ 차원을 유지하여 브로드캐스팅에 유용")
+print("→ Maintains dimension, useful for broadcasting")
 
 print("\n" + "=" * 70)
-print("8. 실전 예제: 학생 성적 데이터 분석")
+print("8. Practical example: Student grade data analysis")
 print("=" * 70)
 
-# 학생 3명, 과목 4개 (수학, 영어, 과학, 역사)
-scores = np.array([[85, 90, 78, 92],  # 학생 1
-                   [88, 85, 91, 87],  # 학생 2
-                   [92, 88, 85, 90]]) # 학생 3
+# 3 students, 4 subjects (Math, English, Science, History)
+scores = np.array([[85, 90, 78, 92],  # Student 1
+                   [88, 85, 91, 87],  # Student 2
+                   [92, 88, 85, 90]]) # Student 3
 
-subjects = ['수학', '영어', '과학', '역사']
-students = ['학생1', '학생2', '학생3']
+subjects = ['Math', 'English', 'Science', 'History']
+students = ['Student 1', 'Student 2', 'Student 3']
 
-print("\n성적표:")
-print(f"{'':8}", end='')
+print("\nGrade Table:")
+print(f"{'':12}", end='')
 for subject in subjects:
-    print(f"{subject:>6}", end='')
+    print(f"{subject:>10}", end='')
 print()
 
 for i, student in enumerate(students):
-    print(f"{student:8}", end='')
+    print(f"{student:12}", end='')
     for score in scores[i]:
-        print(f"{score:6}", end='')
+        print(f"{score:10}", end='')
     print()
 
-# 각 과목별 평균 (axis=0)
+# Average by subject (axis=0)
 subject_avg = np.mean(scores, axis=0)
-print("\n과목별 평균 점수:")
+print("\nAverage score by subject:")
 for subject, avg in zip(subjects, subject_avg):
-    print(f"{subject}: {avg:.1f}점")
+    print(f"{subject}: {avg:.1f} points")
 
-# 각 학생별 평균 (axis=1)
+# Average by student (axis=1)
 student_avg = np.mean(scores, axis=1)
-print("\n학생별 평균 점수:")
+print("\nAverage score by student:")
 for student, avg in zip(students, student_avg):
-    print(f"{student}: {avg:.1f}점")
+    print(f"{student}: {avg:.1f} points")
 
-# 각 과목별 최고 점수 (axis=0)
+# Maximum by subject (axis=0)
 subject_max = np.max(scores, axis=0)
-print("\n과목별 최고 점수:")
+print("\nHighest score by subject:")
 for subject, max_score in zip(subjects, subject_max):
-    print(f"{subject}: {max_score}점")
+    print(f"{subject}: {max_score} points")
 
-# 각 학생별 최고 점수 (axis=1)
+# Maximum by student (axis=1)
 student_max = np.max(scores, axis=1)
-print("\n학생별 최고 점수:")
+print("\nHighest score by student:")
 for student, max_score in zip(students, student_max):
-    print(f"{student}: {max_score}점")
+    print(f"{student}: {max_score} points")
 
 print("\n" + "=" * 70)
-print("9. 누적 연산에서의 axis")
+print("9. Cumulative operations with axis")
 print("=" * 70)
 
 arr = np.array([[1, 2, 3],
                 [4, 5, 6]])
 
-print(f"\n원본 배열:\n{arr}")
+print(f"\nOriginal array:\n{arr}")
 
-print(f"\nnp.cumsum(arr, axis=0) (행 방향 누적 합):")
+print(f"\nnp.cumsum(arr, axis=0) (cumulative sum along rows):")
 print(np.cumsum(arr, axis=0))
-print("→ 각 열에서 위에서 아래로 누적")
+print("→ Cumulative sum from top to bottom in each column")
 
-print(f"\nnp.cumsum(arr, axis=1) (열 방향 누적 합):")
+print(f"\nnp.cumsum(arr, axis=1) (cumulative sum along columns):")
 print(np.cumsum(arr, axis=1))
-print("→ 각 행에서 왼쪽에서 오른쪽으로 누적")
+print("→ Cumulative sum from left to right in each row")
 
 print("\n" + "=" * 70)
-print("요약 및 기억할 핵심 포인트")
+print("Summary and Key Points to Remember")
 print("=" * 70)
 
 print("""
-1. axis는 연산을 수행할 '방향'을 지정합니다
-   - axis=0: 행 방향 (↓)
-   - axis=1: 열 방향 (→)
+1. axis specifies the 'direction' for performing operations
+   - axis=0: Row direction (↓)
+   - axis=1: Column direction (→)
    
-2. axis를 지정하면 해당 차원이 '축소'됩니다
-   - (3, 4) 배열에 axis=0 적용 → (4,) 결과
-   - (3, 4) 배열에 axis=1 적용 → (3,) 결과
+2. When axis is specified, that dimension is 'reduced'
+   - (3, 4) array with axis=0 applied → (4,) result
+   - (3, 4) array with axis=1 applied → (3,) result
    
-3. axis=None (기본값)은 전체 배열에 대해 연산
+3. axis=None (default) performs operation on entire array
    
-4. 여러 축을 동시에 지정 가능: axis=(0, 1)
+4. Multiple axes can be specified simultaneously: axis=(0, 1)
    
-5. keepdims=True로 차원 유지 가능
+5. Dimension can be maintained with keepdims=True
    
-6. 직관적 이해: "axis=n이면 n번째 인덱스를 따라 반복"
-   - axis=0: arr[i, :] 형태로 접근하며 연산
-   - axis=1: arr[:, j] 형태로 접근하며 연산
+6. Intuitive understanding: "if axis=n, repeat along the nth index"
+   - axis=0: Access in form arr[i, :] and perform operation
+   - axis=1: Access in form arr[:, j] and perform operation
 """)
+print("\n" + "=" * 70)
+print("NumPy axis Parameter Detailed Guide")
+print("=" * 70)
 
 
 ### 3. MATHEMATICAL OPERATIONS
